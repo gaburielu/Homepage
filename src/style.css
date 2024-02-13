@@ -1,0 +1,356 @@
+:root {
+  /* Font Sizes */
+  --font-size-tiny: clamp(1rem, 1vw, 1.5rem);
+  --font-size-small: clamp(0.875rem, 1.2vw, 1.5rem);
+  --font-size-medium: clamp(1rem, 1.5vw, 2rem);
+  --font-size-large: clamp(1.125rem, 2vw, 2.5rem);
+  --font-size-xlarge: clamp(1.25rem, 2.5vw, 3rem);
+  --font-size-xxlarge: clamp(1.5rem, 3vw, 4rem);
+
+  /* Line Heights */
+  --line-height-tight: clamp(1.2, 1.2, 1.5);
+  --line-height-normal: clamp(1.5, 1.5, 2);
+  --line-height-loose: clamp(1.8, 2, 2.5);
+
+  /* Spacing */
+  --spacing-xxsmall: clamp(0.25rem, 0.5vw, 1rem);
+  --spacing-xsmall: clamp(0.5rem, 0.75vw, 1.5rem);
+  --spacing-small: clamp(1rem, 1vw, 2rem);
+  --spacing-medium: clamp(1.5rem, 1.5vw, 3rem);
+  --spacing-large: clamp(2rem, 2vw, 4rem);
+  --spacing-xlarge: clamp(3rem, 3vw, 6rem);
+  --spacing-xxlarge: clamp(4rem, 4vw, 8rem);
+
+  /* Colors */
+  --color-primary-light: #90ddd8;
+  --color-accent-light: #60d1dd;
+  --color-background-light: #faedda;
+  --color-text-light: #333;
+
+  --color-primary-dark: #005285;
+  --color-accent-dark: #1e6581;
+  --color-background-dark: #333;
+  --color-text-dark: #faedda;
+}
+
+@media (prefers-color-scheme: dim) {
+  :root {
+    --color-primary-light: var(--color-primary-dark);
+    --color-accent-light: var(--color-accent-dark);
+    --color-background-light: var(--color-background-dark);
+    --color-text-light: var(--color-text-dark);
+  }
+}
+
+@media (prefers-color-scheme: bright) {
+  :root {
+    --color-primary-dark: var(--color-primary-light);
+    --color-accent-dark: var(--color-accent-light);
+    --color-background-dark: var(--color-background-light);
+    --color-text-dark: var(--color-text-light);
+  }
+}
+
+[color-scheme="dim"] {
+  --color-primary-light: var(--color-primary-dark);
+  --color-accent-light: var(--color-accent-dark);
+  --color-background-light: var(--color-background-dark);
+  --color-text-light: var(--color-text-dark);
+}
+
+[color-scheme="bright"] {
+  --color-primary-dark: var(--color-primary-light);
+  --color-accent-dark: var(--color-accent-light);
+  --color-background-dark: var(--color-background-light);
+  --color-text-dark: var(--color-text-light);
+}
+
+/* BODY */
+
+body {
+  background-color: var(--color-background-light);
+  color: var(--color-text-light);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 100vw;
+  overflow: auto;
+}
+
+main,
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 10%;
+  min-height: 90vh;
+}
+
+/* HEADER */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 8vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* NAVIGATION */
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 8vw;
+  margin-right: 2vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pagelink {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-large);
+  margin-bottom: var(--spacing-xxlarge);
+}
+
+#darklight,
+.pageBtn {
+  background-color: var(--color-text-light);
+  border: none;
+  cursor: pointer;
+  border-radius: 5rem;
+  display: grid;
+  place-items: center;
+  opacity: 0.6;
+}
+
+.pageBtn {
+  height: var(--spacing-large);
+  width: var(--spacing-xlarge);
+  transition: transform 400ms ease, background-color 400ms ease,
+    box-shadow 400ms ease;
+}
+
+.pageBtn:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+  box-shadow: 0 0 20px var(--color-accent-light);
+}
+
+.pageBtn > svg {
+  height: var(--spacing-medium);
+  width: var(--spacing-large);
+}
+
+#darklight {
+  height: var(--spacing-medium);
+  width: var(--spacing-large);
+  margin-top: var(--spacing-medium);
+  color: var(--color-background-light);
+  box-shadow: 0 4px 10px rgba(134, 148, 166, 0.5);
+  transition: transform 400ms ease, background-color 400ms ease,
+    box-shadow 400ms ease;
+}
+
+#darklight:hover {
+  transform: scale(1.3);
+  opacity: 0.8;
+  box-shadow: 0 0 30px var(--color-primary-light);
+}
+
+/* MAIN/SECTION */
+
+#mainSection {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* ABOUT */
+
+main {
+  height: 300px;
+}
+
+/* EXPERIENCE */
+
+#experienceSection {
+}
+
+.devIconContainer {
+  background-color: var(--color-text-light);
+}
+
+.devIcon {
+  width: clamp(5vw, 100px, 8vw);
+}
+
+/* PORTFOLIO */
+
+#portfolioSection {
+  height: 600px;
+}
+
+/* MISC */
+
+#othersSection {
+}
+
+/* CONTACT */
+
+#contactSection {
+}
+
+/* MISC */
+
+/* UTILITY */
+
+.bkg1 {
+  background-color: var(--color-primary-light);
+}
+
+.bkg2 {
+  background-color: var(--color-accent-light);
+}
+
+/* MEDIA */
+
+@media (max-width: 376px) {
+  /* Styles for mobile phones and tablet */
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Styles for tablets */
+}
+
+/* WAVE */
+
+.wave1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave1 svg {
+  position: relative;
+  display: block;
+  width: calc(131% + 1.3px);
+  height: 73px;
+}
+
+.wave1 .shape-fill {
+  fill: var(--color-primary-light);
+}
+
+.wave2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave2 svg {
+  position: relative;
+  display: block;
+  width: calc(134% + 1.3px);
+  height: 56px;
+}
+
+.wave2 .shape-fill {
+  fill: var(--color-primary-light);
+}
+
+.wave3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave3 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 104px;
+}
+
+.wave3 .shape-fill {
+  fill: #d0020285;
+}
+
+.wave4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave4 svg {
+  position: relative;
+  display: block;
+  width: calc(124% + 1.3px);
+  height: 104px;
+}
+
+.wave4 .shape-fill {
+  fill: var(--color-accent-light);
+}
+
+.wave5 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave5 svg {
+  position: relative;
+  display: block;
+  width: calc(116% + 1.3px);
+  height: 139px;
+}
+
+.wave5 .shape-fill {
+  fill: var(--color-primary-dark);
+}
+
+.wave6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave6 svg {
+  position: relative;
+  display: block;
+  width: calc(109% + 1.3px);
+  height: 139px;
+}
+
+.wave6 .shape-fill {
+  fill: #d0021b;
+}
