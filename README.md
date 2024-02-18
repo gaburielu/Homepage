@@ -2,7 +2,7 @@
 
 My portfolio and online resume / personal website
 
-Link to project: http://recruiters-love-seeing-live-demos.com/
+Link to project: https://gaburielu.github.io/Homepage/
 
 How It's Made:
 Tech used: HTML, CSS, JavaScript, & Webpack
