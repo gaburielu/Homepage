@@ -75,3 +75,53 @@ window.addEventListener("DOMContentLoaded", () => {
   loadTheme(getCurrentTheme());
 });
 
+///// ICON SLIDER /////
+
+var copy = document.querySelector(".iconsSlide").cloneNode(true);
+document.querySelector(".icons").appendChild(copy);
+
+///// PORTFOLIO IMG /////
+
+import battleshipImg from './asset/scbattleship.png';
+const battleshipDiv = document.querySelector('.battleship');
+const battleship = new Image();
+battleship.src = battleshipImg;
+battleship.alt = 'Screenshot of my battleship project'; 
+battleshipDiv.appendChild(battleship);
+
+import sketchImg from './asset/scSketch.png';
+const sketchDiv = document.querySelector('.sketch');
+const sketch = new Image();
+sketch.src = sketchImg;
+sketch.alt = 'Screenshot of my etch a sketch'; 
+sketchDiv.appendChild(sketch);
+
+import weatherImg from './asset/scWeather.png';
+const weatherDiv = document.querySelector('.weather');
+const weather = new Image();
+weather.src = weatherImg;
+weather.alt = 'Screenshot of my weather forecast site'; 
+weatherDiv.appendChild(weather);
+
+import todoImg from './asset/scTodo.png';
+const todoDiv = document.querySelector('.todos');
+const todo = new Image();
+todo.src = todoImg;
+todo.alt = 'Screenshot of my todo app'; 
+todoDiv.appendChild(todo);
+
+///// ABOUT/CONTACT IMG /////
+
+import aboutImg from './asset/aboutHero.jpg';
+const aboutHeroDiv = document.querySelector('.about-hero');
+const about = new Image();
+about.src = aboutImg;
+about.alt = 'a silhouette of someone'; 
+aboutHeroDiv.appendChild(about);
+
+import contactImg from './asset/contactHero.svg';
+const contactHeroDiv = document.querySelector('.contact-hero');
+const contact = new Image();
+contact.src = contactImg;
+contact.alt = 'a svg of a pixel art character'; 
+contactHeroDiv.appendChild(contact);
