@@ -125,3 +125,20 @@ const contact = new Image();
 contact.src = contactImg;
 contact.alt = 'a svg of a pixel art character'; 
 contactHeroDiv.appendChild(contact);
+
+///
+
+
+const observer = new IntersectionObserver((entries) =>{
+  entries.forEach((entry) => {
+    console.log(entry)
+    if (entry.isIntersecting){
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  })
+})
+const hiddenElements = document.querySelectorAll('.hidden');
+
+hiddenElements.forEach((el) => observer.observe(el));
